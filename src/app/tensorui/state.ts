@@ -15,6 +15,8 @@ limitations under the License.
 
 import * as nn from './nn';
 import * as dataset from './dataset';
+//import * as _ from 'seedrandom';
+//import seedrandom = require('seedrandom');
 
 /** Suffix added to the state when storing if a control is hidden or not. */
 const HIDE_STATE_SUFFIX = '_hide';
@@ -234,7 +236,9 @@ export class State {
     if (state.seed == null) {
       state.seed = Math.random().toFixed(5);
     }
-    Math.seedrandom(state.seed);
+    //HACK FIXME
+    //seedrandom(state.seed);
+    //seedrandom.prng(state.seed);
     return state;
   }
 

@@ -17,8 +17,10 @@ limitations under the License.
 // tslint:disable:quotemark
 import * as d3 from 'd3';
 import * as d3scale from 'd3-scale';
-import { Axis, axisBottom, axisRight } from 'd3-axis'
+import { Axis, axisBottom, axisRight } from 'd3-axis';
 import { select, Selection } from 'd3-selection';
+//import * as _ from 'seedrandom';
+//import seedrandom = require('seedrandom');
 
 import * as nn from './nn';
 import {HeatMap, reduceMatrix} from './heatmap';
@@ -34,6 +36,8 @@ import {
 } from './state';
 import {Example2D, shuffle} from './dataset';
 import {AppendingLineChart} from './linechart';
+
+declare let ga: any;
 
 
 let mainWidth;
@@ -185,7 +189,7 @@ let network: nn.Node[][] = null;
 let lossTrain = 0;
 let lossTest = 0;
 const player = new Player();
-const lineChart = new AppendingLineChart(d3.select('#linechart'),
+let lineChart = new AppendingLineChart(d3.select('#linechart'),
     ['#777', 'black']);
 
 function makeGUI() {
@@ -1072,8 +1076,11 @@ function generateData(firstTime = false) {
     state.seed = Math.random().toFixed(5);
     state.serialize();
     userHasInteracted();
-  }
-  Math.seedrandom(state.seed);
+    }
+    //// Sets Math.random to a PRNG initialized using the given explicit seed.
+    //TODO see if this works for TS
+    //Fixme
+  //_.seedrandom(state.seed);
   const numSamples = (state.problem === Problem.REGRESSION) ?
       NUM_SAMPLES_REGRESS : NUM_SAMPLES_CLASSIFY;
   const generator = state.problem === Problem.CLASSIFICATION ?

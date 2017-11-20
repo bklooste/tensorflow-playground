@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
     </nav>
     <router-outlet></router-outlet>
+    <my-tensor-ui></my-tensor-ui>
   `,
   styleUrls: ['./app.component.css']
 })

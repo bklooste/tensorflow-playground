@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TensoruiComponent } from './tensorui.component';
+import { Player } from './playground';
 
 describe('TensoruiComponent', () => {
-  let component: TensoruiComponent;
-  let fixture: ComponentFixture<TensoruiComponent>;
+  let component: Player;
+  let fixture: ComponentFixture<Player>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TensoruiComponent ]
+      declarations: [ Player ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TensoruiComponent);
+    fixture = TestBed.createComponent(Player);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

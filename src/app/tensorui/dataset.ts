@@ -39,6 +39,7 @@ export function shuffle(array: any[]): void {
   // While there are elements in the array
   while (counter > 0) {
     // Pick a random index
+    // HACK use seed random
     index = Math.floor(Math.random() * counter);
     // Decrease counter by 1
     counter--;

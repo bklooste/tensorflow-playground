@@ -13,8 +13,9 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroSearchComponent } from './hero-search.component';
-import { TensoruiComponent } from './tensorui/tensorui.component';
 import { Player } from './tensorui/playground';
+
+
 
 @NgModule({
   imports: [
@@ -30,7 +31,6 @@ import { Player } from './tensorui/playground';
     HeroSearchComponent,
     HeroesComponent,
     HeroDetailComponent,
-    TensoruiComponent,
     Player,
   ],
   providers: [HeroService],
